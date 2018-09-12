@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'; // подключает React компонент к Redux store
 import { User } from '../components/User';
 import { Page } from '../components/Page';
+import { setYear } from '../actions/PageActions'
 import './App.css';
 
 class App extends Component {
@@ -31,6 +32,18 @@ const mapStateToProps = store => {
     }
 }
 
+// прокидываем actions в контейнер
+const mapDispatchToProps = dispatch => {
+    console.log(dispatch);
+
+    return {
+        setYearAction: year => dispatch(setYear(year))
+    }
+}
+
 
 // в наш компонент App, с помощью connect(mapStateToProps)
-export default connect(mapStateToProps)(App);
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(App);
