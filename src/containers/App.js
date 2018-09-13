@@ -7,16 +7,20 @@ import './App.css';
 
 class App extends Component {
     render() {
-        const { user, page } = this.props;
+        const {
+            user: { name, surname, age },
+            page: { year, photos },
+            setYearAction
+        } = this.props;
 
         return (
             <div className="App">
                 <header className="App-header">
                     <h1 className="App-title">Мой топ фото</h1>
-                    <User user={user} />
+                    <User name={name} surname={surname} age={age} />
                 </header>
                 <p className="App-intro">Здесь будут мои самые залайканые фото</p>
-                <Page page={page} />
+                <Page year={year} photos={photos} setYear={setYearAction} />
             </div>
         )
     }

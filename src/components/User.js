@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 export class User extends Component {
     render() {
-        const { name, surname, age } = this.props.user;
+        const { name, surname, age } = this.props;
 
         return (
             <p>Привет, {name} {surname}! Тебе {age}</p>
